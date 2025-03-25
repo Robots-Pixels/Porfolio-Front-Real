@@ -4,7 +4,6 @@ import { Link } from 'react-router-dom';
 import Footer from '../Components/Footer';
 import { HashLink } from 'react-router-hash-link';
 import { useNavigate } from 'react-router-dom'
-import { meta } from '@eslint/js';
 
 export default function Home({transform}) {
 
@@ -31,9 +30,10 @@ export default function Home({transform}) {
         e.preventDefault();
         setLoading(true);
 
-        const res = await fetch(`${import.meta.env.VITE_BACKEND_API_BASE_URL}/api/message/newMessage`,
+        const base = import.meta.env.VITE_BACKEND_API_BASE_URL;
+        const res = await fetch(`${base}/api/message/newMessage`,
             {
-                method: "POST",
+                method: "POST", 
                 headers: {
                     "Content-Type": "application/json",
                 },
@@ -57,6 +57,14 @@ export default function Home({transform}) {
             navigate("/");
         }, 2000);
     }
+
+    useEffect(() => {
+        if (successful){
+            setTimeout(()=> {
+                setTimeout(false);
+            }, 2000)
+        }
+    }, [successful]);
 
   return (
 
@@ -347,7 +355,7 @@ export default function Home({transform}) {
 
                             <div className='flex flex-col gap-1'>
                                 <label className='text-xs sm:text-md'>Your Email Address</label>
-                                <input id='email' onChange={handleChange} value={formData.email} required className='text-md sm:text-md outline-none pb-2 border-b-1 w-full text-[#052935]' type="text" placeholder='Enter your email'/>
+                                <input id='email' onChange={handleChange} value={formData.email} required className='text-md sm:text-md outline-none pb-2 border-b-1 w-full text-[#052935]' type="email" placeholder='Enter your email'/>
                             </div>
 
                         </div>
