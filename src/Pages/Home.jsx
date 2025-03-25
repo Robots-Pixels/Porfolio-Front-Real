@@ -31,7 +31,7 @@ export default function Home({transform}) {
         e.preventDefault();
         setLoading(true);
 
-        const res = await fetch(`${import.meta.env.BACKEND_API_BASE_URL}/api/message/newMessage`,
+        const res = await fetch(`${import.meta.env.VITE_BACKEND_API_BASE_URL}/api/message/newMessage`,
             {
                 method: "POST",
                 headers: {
