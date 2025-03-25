@@ -6,6 +6,10 @@
   --secondary: #052935;
 }
 
+#root{
+  position: relative;
+}
+
 body {
   margin: 0;
   background: #faf8ff;

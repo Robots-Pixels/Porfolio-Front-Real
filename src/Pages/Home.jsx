@@ -5,7 +5,7 @@ import Footer from '../Components/Footer';
 import { HashLink } from 'react-router-hash-link';
 import { useNavigate } from 'react-router-dom'
 
-export default function Home({transform}) {
+export default function Home({transform, success,  setSucces}) {
 
     const [formData, setFormData] = useState({
         name: "",
@@ -16,7 +16,6 @@ export default function Home({transform}) {
 
     const [error, setError] = useState(null);
     const [loading, setLoading] = useState(false);
-    const [successful, setSuccessful] = useState(false);
 
 
     const handleChange = (e) => {
@@ -49,7 +48,7 @@ export default function Home({transform}) {
         }
 
         if (data.success === true){
-            setSuccessful(data.message);
+            setSucces(data.message);
             setLoading(false);
         }
 
@@ -59,25 +58,22 @@ export default function Home({transform}) {
     }
 
     useEffect(() => {
-        if (successful){
+        if (success){
+            setFormData({
+                name: "",
+                email: "",
+                message: ""
+            })
             setTimeout(()=> {
-                setTimeout(false);
+                setSucces(false);
             }, 2000)
         }
-    }, [successful]);
+    }, [success]);
 
   return (
 
     <div className={`relative bg-[#faf8ff] w-full`}
     style={{transition: "all 0.5s ease", transform: `translateY(${transform}rem)`}}>
-
-        <div className={` ${successful ? "absolute" : "hidden"}  z-30 w-full h-full bg-black/80`}>
-            <div className='relative flex items-center justify-center'>
-                <div className='fixed top-50 sm:top-30 bg-white p-8 sm:p-30 rounded-3xl'>
-                    <p className='relative z-30 text-2xl sm:text-4xl text-center max-w-[45rem]'> Thank you for reaching out! Your message has been sent successfully. We will get back to you shortly. <FaCheck className='float-right mt-4'/> </p>
-                </div>
-            </div>
-        </div>
 
         <section id='hero' className='max-w-3xl md:max-w-6xl mx-auto px-6 md:px-8] sm:pb-20'>
 
