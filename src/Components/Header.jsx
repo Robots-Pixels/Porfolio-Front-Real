@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
-import { FaBars, FaChevronLeft, FaChevronRight, FaEnvelope, FaGithub, FaLinkedin } from 'react-icons/fa';
+import { FaBars, FaChevronLeft, FaChevronRight, FaEnvelope, FaGithub, FaLinkedin, FaWhatsapp } from 'react-icons/fa';
 import { HashLink } from 'react-router-hash-link';
 
 export default function Header({setTransform}) {
@@ -82,6 +82,7 @@ export default function Header({setTransform}) {
                             <HashLink smooth to={"#services"}>
                                 My Services
                             </HashLink>
+                            
                         </div>
 
                     </div>
@@ -133,10 +134,15 @@ export default function Header({setTransform}) {
                                 <FaEnvelope className='text-2xl'/>
                             </Link>
 
+
+                            <Link className='hover:scale-120 transition-all' to={"https://wa.me/002290140820493"}>
+                                <FaWhatsapp className='text-2xl'/>
+                            </Link>
+
                         </div>
 
                         <div className='mt-2 -ml-1'>
-                            <HashLink smooth to={"#contact"} className='border-[#028041] border-1 text-[#028041] px-2 py-2 text-[1rem] rounded-xl shadow-3xs shadow-[#028041] hover:bg-[#028041] hover:text-[#fff] transition-colors'>
+                            <HashLink smooth to={"#contact"} className='border-[#028041] border-1 text-[#028041] px-4 py-2 text-[1rem] rounded-xl shadow-3xs shadow-[#028041] hover:bg-[#028041] hover:text-[#fff] transition-colors'>
                                 Contact Me
                             </HashLink>
                         </div>

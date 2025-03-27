@@ -1,5 +1,5 @@
 import React from 'react'
-import { FaGithub, FaLinkedin } from 'react-icons/fa'
+import { FaGithub, FaLinkedin, FaWhatsapp } from 'react-icons/fa'
 import { Link } from 'react-router-dom'
 import { HashLink } from 'react-router-hash-link'
 
@@ -50,6 +50,11 @@ export default function Footer() {
 
                         <Link className='hover:scale-120 transition-all' to={"/https://www.linkedin.com/in/otmar-tchenga-953988319?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"} >
                             <FaLinkedin className='text-2xl'/>
+                        </Link>
+
+
+                        <Link className='hover:scale-120 transition-all' to={"https://wa.me/002290140820493"}>
+                                <FaWhatsapp className='text-2xl'/>
                         </Link>
 
 

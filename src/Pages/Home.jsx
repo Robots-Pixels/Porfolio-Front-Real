@@ -1,9 +1,12 @@
 import React, { useEffect, useState } from 'react'
-import { FaEnvelope, FaGithub, FaLinkedin, FaDotCircle, FaArrowRight, FaEye, FaCheck } from 'react-icons/fa';
+import { FaEnvelope, FaGithub, FaLinkedin, FaDotCircle, FaArrowRight, FaEye, FaCheck, FaWhatsapp } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
 import Footer from '../Components/Footer';
 import { HashLink } from 'react-router-hash-link';
 import { useNavigate } from 'react-router-dom'
+import { motion } from "framer-motion";
+import { useInView } from "react-intersection-observer";
+
 
 export default function Home({transform, success,  setSucces}) {
 
@@ -70,12 +73,23 @@ export default function Home({transform, success,  setSucces}) {
         }
     }, [success]);
 
+    const { ref: heroRef, inView: heroInView } = useInView({ triggerOnce: true, threshold: 0.2 });
+    const { ref: aboutRef, inView: aboutInView } = useInView({ triggerOnce: true, threshold: 0.2 });
+    const { ref: projectsRef, inView: projectsInView } = useInView({ triggerOnce: true, threshold: 0.2 });
+    const { ref: skillsRef, inView: skillsInView } = useInView({ triggerOnce: true, threshold: 0.2 });
+    const { ref: contactRef, inView: contactInView } = useInView({ triggerOnce: true, threshold: 0.2 });
+    
   return (
-
     <div className={`relative bg-[#faf8ff] w-full`}
     style={{transition: "all 0.5s ease", transform: `translateY(${transform}rem)`}}>
 
-        <section id='hero' className='max-w-3xl md:max-w-6xl mx-auto px-6 md:px-8] sm:pb-20'>
+        <motion.section
+        ref={heroRef}
+        initial={{ opacity: 0, y: 20 }}
+        animate={heroInView ? { opacity: 1, y: 0 } : {}}
+        transition={{ duration: 1.5, ease: "easeOut" }}
+        id='hero'
+        className='max-w-3xl md:max-w-6xl mx-auto px-6 md:px-8 sm:pb-20'>
 
             <div className='flex flex-col sm:flex-row gap-4 sm:gap-0  sm:h-[70vh] items-center py-10 sm:py-0'>
 
@@ -105,6 +119,10 @@ export default function Home({transform, success,  setSucces}) {
 
                         <Link className='hover:scale-120 transition-all' to={"mailto:otmartch23@gmail.com"}>
                             <FaEnvelope className='text-2xl'/>
+                        </Link>
+
+                        <Link className='hover:scale-120 transition-all' to={"https://wa.me/002290140820493"}>
+                            <FaWhatsapp className='text-2xl'/>
                         </Link>
 
                         </div>
@@ -159,7 +177,7 @@ export default function Home({transform, success,  setSucces}) {
 
                 </div>
 
-                <div className='sm:hidden flex self-start items-center gap-2 sm:gap-4 mt-4 ml-3'>
+                <div className='flex sm:hidden self-start items-center gap-2 sm:gap-4 mt-4 ml-3'>
 
                     <div className='flex gap-2'>
 
@@ -175,12 +193,17 @@ export default function Home({transform, success,  setSucces}) {
                         <FaEnvelope className='text-2xl'/>
                     </Link>
 
+
+                    <Link className='hover:scale-120 transition-all' to={"https://wa.me/002290140820493"}>
+                            <FaWhatsapp className='text-2xl'/>
+                    </Link>
+
                     </div>
 
                     <div className=''>
-                        <Link className='border-[#028041] border-1 text-[#028041] px-2 py-2 text-[1rem] rounded-xl shadow-3xs shadow-[#028041] hover:bg-[#028041] hover:text-[#fff] transition-colors'>
+                        <HashLink smooth to={"#contact"} className='border-[#028041] border-1 text-[#028041] px-2 py-2 text-[1rem] rounded-xl shadow-3xs shadow-[#028041] hover:bg-[#028041] hover:text-[#fff] transition-colors'>
                             Contact Me
-                        </Link>
+                        </HashLink>
                     </div>
 
                 </div>
@@ -188,25 +211,71 @@ export default function Home({transform, success,  setSucces}) {
             </div>
 
 
-        </section>
+        </motion.section>
 
-        <section id="about" className="py-20 bg-[#d5fadd]">
-            <div className="max-w-3xl md:max-w-6xl mx-auto px-6 md:px-8]">
+        <motion.section
+        ref={aboutRef}
+        initial={{ opacity: 0, y: 20 }}
+        animate={aboutInView ? { opacity: 1, y: 0 } : {}}
+        transition={{ duration: 0.6, ease: "easeOut" }}
+        id="about"
+        className="py-20 bg-[#d5fadd]">
+            <div className="max-w-3xl md:max-w-6xl mx-auto px-6 md:px-8">
                 <h2 className="text-3xl font-semibold mb-6">More About Me</h2>
                 <p className="text-md sm:text-lg">
-                <span className='text-3xl'>I</span>'m Otmar, a professional web developer focused on creating scalable, user-friendly applications. With <span className='font-bold'>over 3 years of experience</span>, I specialize in full-stack technologies using <span className='font-bold'>the MERN Stack</span>, always striving for clean, efficient code and seamless user experiences.</p>
+                <span className='text-3xl'>I</span>m Otmar — your partner in building powerful, scalable, and user-focused web applications. As a professional full-stack web developer with over 2 years of experience, I help businesses and entrepreneurs turn their ideas into robust digital solutions. Using technologies like the MERN stack, I craft clean, efficient code and seamless user experiences — always with scalability and performance in mind.<span className='font-bold'>over 3 years of experience</span>, I specialize in full-stack technologies using <span className='font-bold'>the MERN Stack</span>, always striving for clean, efficient code and seamless user experiences.</p>
                 <p className="mt-4 text-md sm:text-lg">
-                <span className='text-3xl'>C</span>uriosity and continuous learning drive my work. I thrive in the fast-paced, ever-evolving tech world, <span className='font-bold'>adapting quickly to new tools and frameworks.</span></p>
+                <span className='text-3xl'>C</span>uriosity and continuous learning fuel my craft. I stay ahead in the fast-moving tech world, constantly exploring new tools and technologies — so I can deliver innovative, future-proof solutions for my clients.</p>
                 <p className="mt-4 text-md sm:text-lg">
-                <span className='text-3xl'>I</span>  <span className='font-bold'>believe in collaboration and enjoy working in teams</span>, and mentoring others. It's important to me to not only develop my technical skills but also embrace a startup mindset—understanding business goals and taking initiative to lead projects.</p>
+                <span className='text-3xl'>I</span>  <span className='font-bold'>believe in collaboration, enjoy working in teams</span> and mentoring others. It's important to me to not only develop my technical skills but also embrace a startup mindset—understanding business goals and taking initiative to lead projects.</p>
             </div>
-        </section>
+        </motion.section>
 
-        <section id="portfolio" className='py-20'>
+        <motion.section
+        ref={projectsRef}
+        initial={{ opacity: 0, y: 20 }}
+        animate={projectsInView ? { opacity: 1, y: 0 } : {}}
+        transition={{ duration: 0.7, ease: "easeOut" }}
+        id="portfolio" 
+        className='py-20'>
 
-            <div className="max-w-3xl md:max-w-6xl mx-auto px-6 md:px-8]">
+            <div className="max-w-3xl md:max-w-6xl mx-auto px-6 md:px-8">
                 <h1 className="text-3xl font-semibold mb-10">My Work</h1>
                 <div className="flex flex-col gap-5">
+
+                    <div onClick={(e) => {e.stopPropagation(); window.location.href='https://yumking-frontend.vercel.app/'}} className="relative project overflow-hidden group">
+
+    <div className='project-layer absolute w-full h-full bg-[#000]/60 gap-3 rounded-3xl flex flex-col items-center justify-center translate-y-[100%] group-hover:translate-y-[0%]' 
+    style={{transition: "translate 0.7s"}}>
+
+        <div>
+            <h3 className='text-[#faf8ff] w-[20rem] md:w-[30rem] text-center font-bold'>
+                A fast and intuitive food delivery app with real-time reservation, smart filters and authentication.
+            </h3>
+        </div>
+
+        <div className='flex items-center justify-center text-2xl gap-10'>
+            <Link className='text-4xl text-black' to={"https://github.com/Robots-Pixels/yumking-fast-food-app"} target='_blank'>
+                <button className='flex items-center bg-[#028041] rounded-sm gap-2 p-1 text-[#faf8ff]'>
+                    <span className='text-sm md:text-xl'>Code Here</span>
+                    <FaGithub className='text-[1rem] md:text-[2rem]'/>
+                </button>
+            </Link>
+
+            <Link className='text-4xl text-black' to={"https://yumking-frontend.vercel.app/"} target='_blank'>
+                <button className='flex items-center bg-[#028041] rounded-sm gap-2 p-1 text-[#faf8ff]'>
+                    <span className='text-sm md:text-xl'>Live Preview</span>
+                    <FaEye className='text-[1rem] md:text-[2rem]'/>
+                </button>
+            </Link>
+
+        </div>
+    </div>
+
+    <img className='rounded-3xl' src="/project2.png" />
+
+                    </div>
+
 
                     <div onClick={(e) => {e.stopPropagation(); window.location.href='https://celeste-restaurant.vercel.app/'}} className="relative project overflow-hidden group">
 
@@ -214,7 +283,7 @@ export default function Home({transform, success,  setSucces}) {
                         style={{transition: "translate 0.7s"}}>
 
                             <div>
-                                <h3 className='text-[#faf8ff] w-[30rem] text-center font-bold'>
+                                <h3 className='text-[#faf8ff] w-[20rem] md:w-[30rem] text-center font-bold'>
                                     A clean, responsive portfolio platform with dynamic sections and smooth animations.
                                 </h3>
                             </div>
@@ -222,15 +291,15 @@ export default function Home({transform, success,  setSucces}) {
                             <div className='flex items-center justify-center text-2xl gap-10'>
                                 <Link className='text-4xl text-black' to={"https://github.com/Robots-Pixels/Celeste-Restaurant"} target='_blank'>
                                     <button className='flex items-center bg-[#028041] rounded-sm gap-2 p-1 text-[#faf8ff]'>
-                                        <span className='text-xl'>Code Here</span>
-                                        <FaGithub className='text-[2rem]'/>
+                                        <span className='text-sm md:text-xl'>Code Here</span>
+                                        <FaGithub className='text-[1rem] md:text-[2rem]'/>
                                     </button>
                                 </Link>
 
                                 <Link className='text-4xl text-black' to={"https://celeste-restaurant.vercel.app/"} target='_blank'>
                                     <button className='flex items-center bg-[#028041] rounded-sm gap-2 p-1 text-[#faf8ff]'>
-                                        <span className='text-xl'>Live Preview</span>
-                                        <FaEye className='text-[2rem]'/>
+                                        <span className='text-sm md:text-xl'>Live Preview</span>
+                                        <FaEye className='text-[1rem] md:text-[2rem]'/>
                                     </button>
                                 </Link>
 
@@ -241,47 +310,20 @@ export default function Home({transform, success,  setSucces}) {
 
                     </div>
 
-                    <div onClick={(e) => {e.stopPropagation(); window.location.href='https://yumking-frontend.vercel.app/'}} className="relative project overflow-hidden group">
-
-                        <div className='project-layer absolute w-full h-full bg-[#000]/60 gap-3 rounded-3xl flex flex-col items-center justify-center translate-y-[100%] group-hover:translate-y-[0%]' 
-                        style={{transition: "translate 0.7s"}}>
-
-                            <div>
-                                <h3 className='text-[#faf8ff] w-[30rem] text-center font-bold'>
-                                    A fast and intuitive food delivery app with real-time reservation, smart filters and authentication.
-                                </h3>
-                            </div>
-
-                            <div className='flex items-center justify-center text-2xl gap-10'>
-                                <Link className='text-4xl text-black' to={"https://github.com/Robots-Pixels/yumking-fast-food-app"} target='_blank'>
-                                    <button className='flex items-center bg-[#028041] rounded-sm gap-2 p-1 text-[#faf8ff]'>
-                                        <span className='text-xl'>Code Here</span>
-                                        <FaGithub className='text-[2rem]'/>
-                                    </button>
-                                </Link>
-
-                                <Link className='text-4xl text-black' to={"https://yumking-frontend.vercel.app/"} target='_blank'>
-                                    <button className='flex items-center bg-[#028041] rounded-sm gap-2 p-1 text-[#faf8ff]'>
-                                        <span className='text-xl'>Live Preview</span>
-                                        <FaEye className='text-[2rem]'/>
-                                    </button>
-                                </Link>
-
-                            </div>
-                        </div>
-
-                        <img className='rounded-3xl' src="/project2.png" />
-
-                    </div>
-
                 </div>
 
             </div>
-        </section>
+        </motion.section>
 
-        <section id="skills" className='py-20 bg-[#d5fadd]'>
+        <motion.section
+        ref={skillsRef}
+        initial={{ opacity: 0, y: 20 }}
+        animate={skillsInView ? { opacity: 1, y: 0 } : {}}
+        transition={{ duration: 0.7, ease: "easeOut" }}
+        id="skills" 
+        className='py-20 bg-[#d5fadd]'>
 
-            <div className="max-w-3xl md:max-w-6xl mx-auto px-6 md:px-8]">
+            <div className="max-w-3xl md:max-w-6xl mx-auto px-6 md:px-8">
 
                 <div id="services">
 
@@ -329,10 +371,15 @@ export default function Home({transform, success,  setSucces}) {
 
             </div>
 
-        </section>
+        </motion.section>
 
-        <section id='contact'>
-            <div className="max-w-3xl md:max-w-6xl mx-auto px-6 md:px-8] py-20">
+        <motion.section
+        ref={contactRef}
+        initial={{ opacity: 0, y: 20 }}
+        animate={contactInView ? { opacity: 1, y: 0 } : {}}
+        transition={{ duration: 0.7, ease: "easeOut" }}
+        id="contact">
+            <div className="max-w-3xl md:max-w-6xl mx-auto px-6 md:px-8 py-20">
                 <div className="flex flex-col items-center gap-5">
                     <h2 className='text-2xl sm:text-4xl font-bold text-[#028041] text-center mb-4'>Send me a message!</h2>
 
@@ -373,7 +420,7 @@ export default function Home({transform, success,  setSucces}) {
 
                 </div>
             </div>
-        </section>
+        </motion.section>
 
         <Footer/>
         
