@@ -52,10 +52,13 @@ export default function Footer() {
                             <FaLinkedin className='text-2xl'/>
                         </Link>
 
-
-                        <Link className='hover:scale-120 transition-all' to={"https://wa.me/002290140820493"}>
+                            <a 
+                            href={`https://wa.me/22940820493?text=Bonjour,%20je%20viens%20de%20votre%20site%20internet%20et%20j'aimerais%20avoir%20plus%20d'informations%20sur%20vos%20offres%20Merci.`}
+                            target="_blank"
+                            rel="noopener noreferrer"                                
+                            className='hover:scale-120 transition-all'>
                                 <FaWhatsapp className='text-2xl'/>
-                        </Link>
+                            </a>
 
 
                         <Link className='hover:scale-120 transition-all' to={"https://github.com/Robots-Pixels"}>

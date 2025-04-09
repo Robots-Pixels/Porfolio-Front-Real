@@ -121,9 +121,14 @@ export default function Home({transform, success,  setSucces}) {
                             <FaEnvelope className='text-2xl'/>
                         </Link>
 
-                        <Link className='hover:scale-120 transition-all' to={"https://wa.me/002290140820493"}>
-                            <FaWhatsapp className='text-2xl'/>
-                        </Link>
+                            <a 
+                            href={`https://wa.me/22940820493?text=Bonjour,%20je%20viens%20de%20votre%20site%20internet%20et%20j'aimerais%20avoir%20plus%20d'informations%20sur%20vos%20offres%20Merci.`}
+                            target="_blank"
+                            rel="noopener noreferrer"                                
+                            className='hover:scale-120 transition-all'>
+                                <FaWhatsapp className='text-2xl'/>
+                            </a>
+     
 
                         </div>
 
@@ -194,9 +199,13 @@ export default function Home({transform, success,  setSucces}) {
                     </Link>
 
 
-                    <Link className='hover:scale-120 transition-all' to={"https://wa.me/002290140820493"}>
-                            <FaWhatsapp className='text-2xl'/>
-                    </Link>
+                    <a 
+                            href={`https://wa.me/22940820493?text=Bonjour,%20je%20viens%20de%20votre%20site%20internet%20et%20j'aimerais%20avoir%20plus%20d'informations%20sur%20vos%20offres%20Merci.`}
+                            target="_blank"
+                            rel="noopener noreferrer"                                
+                            className='hover:scale-120 transition-all'>
+                                <FaWhatsapp className='text-2xl'/>
+                            </a>
 
                     </div>
 
@@ -214,22 +223,30 @@ export default function Home({transform, success,  setSucces}) {
         </motion.section>
 
         <motion.section
-        ref={aboutRef}
-        initial={{ opacity: 0, y: 20 }}
-        animate={aboutInView ? { opacity: 1, y: 0 } : {}}
-        transition={{ duration: 0.6, ease: "easeOut" }}
-        id="about"
-        className="py-20 bg-[#d5fadd]">
-            <div className="max-w-3xl md:max-w-6xl mx-auto px-6 md:px-8">
-                <h2 className="text-3xl font-semibold mb-6">More About Me</h2>
-                <p className="text-md sm:text-lg">
-                <span className='text-3xl'>I</span>m Otmar — your partner in building powerful, scalable, and user-focused web applications. As a professional full-stack web developer with over 2 years of experience, I help businesses and entrepreneurs turn their ideas into robust digital solutions. Using technologies like the MERN stack, I craft clean, efficient code and seamless user experiences — always with scalability and performance in mind.<span className='font-bold'>over 3 years of experience</span>, I specialize in full-stack technologies using <span className='font-bold'>the MERN Stack</span>, always striving for clean, efficient code and seamless user experiences.</p>
-                <p className="mt-4 text-md sm:text-lg">
-                <span className='text-3xl'>C</span>uriosity and continuous learning fuel my craft. I stay ahead in the fast-moving tech world, constantly exploring new tools and technologies — so I can deliver innovative, future-proof solutions for my clients.</p>
-                <p className="mt-4 text-md sm:text-lg">
-                <span className='text-3xl'>I</span>  <span className='font-bold'>believe in collaboration, enjoy working in teams</span> and mentoring others. It's important to me to not only develop my technical skills but also embrace a startup mindset—understanding business goals and taking initiative to lead projects.</p>
-            </div>
-        </motion.section>
+  ref={aboutRef}
+  initial={{ opacity: 0, y: 20 }}
+  animate={aboutInView ? { opacity: 1, y: 0 } : {}}
+  transition={{ duration: 0.6, ease: "easeOut" }}
+  id="about"
+  className="py-20 bg-[#d5fadd]"
+>
+  <div className="max-w-3xl md:max-w-6xl mx-auto px-6 md:px-8">
+    <h2 className="text-3xl font-semibold mb-6">Who I Help — And How</h2>
+    
+    <p className="text-md sm:text-lg">
+      <span className="text-3xl">I</span>'m Otmar — I help small business owners like you build a strong digital presence that attracts real customers. Whether you need a modern website, a clean online image, or help getting visible on social media, I make the tech side easy so you can focus on running your business.
+    </p>
+    
+    <p className="mt-4 text-md sm:text-lg">
+      <span className="text-3xl">W</span>ith 3+ years of experience building web solutions using the <span className="font-bold">MERN Stack</span>, I focus on what matters most to you: results, speed, and simplicity. You’ll get a site that looks great, loads fast, and actually helps you grow.
+    </p>
+    
+    <p className="mt-4 text-md sm:text-lg">
+      <span className="text-3xl">I</span> believe in clarity, collaboration, and results. I work closely with every client to understand their goals and offer honest advice — not just code. If you're serious about growing your business online, let's make it happen.
+    </p>
+  </div>
+</motion.section>
+
 
         <motion.section
         ref={projectsRef}
@@ -316,62 +333,59 @@ export default function Home({transform, success,  setSucces}) {
         </motion.section>
 
         <motion.section
-        ref={skillsRef}
-        initial={{ opacity: 0, y: 20 }}
-        animate={skillsInView ? { opacity: 1, y: 0 } : {}}
-        transition={{ duration: 0.7, ease: "easeOut" }}
-        id="skills" 
-        className='py-20 bg-[#d5fadd]'>
+  ref={skillsRef}
+  initial={{ opacity: 0, y: 20 }}
+  animate={skillsInView ? { opacity: 1, y: 0 } : {}}
+  transition={{ duration: 0.7, ease: "easeOut" }}
+  id="skills" 
+  className='py-20 bg-[#d5fadd]'
+>
+  <div className="max-w-3xl md:max-w-6xl mx-auto px-6 md:px-8">
+    <div id="services">
+      <div className="container">
+        <h1 className="text-3xl font-bold mb-8">Services That Help You Grow</h1>
+        
+        <div className="services-list grid gap-10 md:grid-cols-3">
+        
+          <div>
+            <i className="fa-solid fa-globe"></i>
+            <h2 className="text-xl font-semibold mt-4 mb-2">Business Website Creation</h2>
+            <p>
+              I create elegant, mobile-friendly websites that show who you are and help customers trust your business. Perfect for restaurants, boutiques, salons, or any service-based business.
+            </p>
+            <HashLink smooth to="#contact" className='flex items-center gap-2 text-sm mt-3'>
+              <span>Let’s Get in Touch</span> <FaArrowRight />
+            </HashLink>
+          </div>
+        
+          <div>
+            <i className="fa-brands fa-facebook"></i>
+            <h2 className="text-xl font-semibold mt-4 mb-2">Social Media Setup & Growth</h2>
+            <p>
+              I help you open or improve your business pages on Facebook, Instagram & Fryim — with visual design, description, and a simple strategy to start getting attention.
+            </p>
+            <HashLink smooth to="#contact" className='flex items-center gap-2 text-sm mt-3'>
+              <span>Let’s Get in Touch</span> <FaArrowRight />
+            </HashLink>
+          </div>
+          
+          <div>
+            <i className="fa-solid fa-bullhorn"></i>
+            <h2 className="text-xl font-semibold mt-4 mb-2">Visibility & Digital Strategy</h2>
+            <p>
+              You don’t just need a website — you need people to find you. I provide simple, effective SEO and advice to help your business stand out locally and online.
+            </p>
+            <HashLink smooth to="#contact" className='flex items-center gap-2 text-sm mt-3'>
+              <span>Let’s Get in Touch</span> <FaArrowRight />
+            </HashLink>
+          </div>
 
-            <div className="max-w-3xl md:max-w-6xl mx-auto px-6 md:px-8">
+        </div>
+      </div>
+    </div>
+  </div>
+</motion.section>
 
-                <div id="services">
-
-                    <div className="container">
-                        <h1 className="text-3xl font-bold">My Services</h1>
-                        <div className="services-list">
-                            
-                        <div>
-                            <i className="fa-brands fa-app-store"></i>
-                            <h2>FullStack Web Development</h2>
-                            <p>
-                            Building complete, scalable web applications from idea to deployment using the MERN stack.
-                            </p>
-
-                            <HashLink smooth to="#contact" className='flex items-center gap-2 text-sm'> <span>Let's Get in touch </span> <span><FaArrowRight/></span> </HashLink>
-
-                        </div>
-                    
-                        <div>
-                            <i className="fa-brands fa-app-store"></i>
-                            <h2>Front-End Development</h2>
-                            <p>
-                            Crafting responsive, user-friendly interfaces with React and modern design principles.
-                            </p>
-
-                            <HashLink smooth to="#contact" className='flex items-center gap-2 text-sm' > <span>Let's Get in touch </span> <span><FaArrowRight/></span> </HashLink>
-
-                        </div>
-                             
-                        <div>
-                            <i className="fa-brands fa-app-store"></i>
-                            <h2>Back-End Development</h2>
-                            <p>
-                            Designing robust APIs, managing databases, and ensuring secure, high-performance server-side logic with Node.js and MongoDB.
-                            </p>
-
-                            <HashLink smooth to="#contact" className='flex items-center gap-2 text-sm'> <span>Let's Get in touch </span> <span><FaArrowRight/></span> </HashLink>
-
-                        </div>
-                        
-                        </div>
-                    </div>
-                    
-                </div>
-
-            </div>
-
-        </motion.section>
 
         <motion.section
         ref={contactRef}
