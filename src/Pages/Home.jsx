@@ -144,7 +144,7 @@ export default function Home({transform, success,  setSucces}) {
                 </div>
 
                 <div className='relative w-full z-20 sm:flex-1 bg-cover h-[15rem] sm:h-100 rounded-[80px] sm:rounded-[100px]'
-                style={{backgroundImage: `url("/1.jpg")`, backgroundSize: "120%", backgroundPosition: 'top -40px center'}}>
+                style={{backgroundImage: `url("/1.webp")`, backgroundSize: "120%", backgroundPosition: 'top -40px center'}}>
 
                     <div className='hidden z-2 absolute bottom-0 text-[#79af87] -left-10 text-[0.5rem] sm:grid grid-cols-5 gap-4'>
 
@@ -260,26 +260,26 @@ export default function Home({transform, success,  setSucces}) {
                 <h1 className="text-3xl font-semibold mb-10">My Work</h1>
                 <div className="flex flex-col gap-5">
 
-                    <div onClick={(e) => {e.stopPropagation(); window.location.href='https://yumking-frontend.vercel.app/'}} className="relative project overflow-hidden group">
+                    <div onClick={(e) => {e.stopPropagation(); window.location.href='https://celeste-restaurant.vercel.app/'}} className="relative project overflow-hidden group">
 
     <div className='project-layer absolute w-full h-full bg-[#000]/60 gap-3 rounded-3xl flex flex-col items-center justify-center translate-y-[100%] group-hover:translate-y-[0%]' 
     style={{transition: "translate 0.7s"}}>
 
         <div>
             <h3 className='text-[#faf8ff] w-[20rem] md:w-[30rem] text-center font-bold'>
-                A fast and intuitive food delivery app with real-time reservation, smart filters and authentication.
+                A clean, responsive portfolio platform with dynamic sections and smooth animations.
             </h3>
         </div>
 
         <div className='flex items-center justify-center text-2xl gap-10'>
-            <Link className='text-4xl text-black' to={"https://github.com/Robots-Pixels/yumking-fast-food-app"} target='_blank'>
+            <Link className='text-4xl text-black' to={"https://github.com/Robots-Pixels/Celeste-Restaurant"} target='_blank'>
                 <button className='flex items-center bg-[#028041] rounded-sm gap-2 p-1 text-[#faf8ff]'>
                     <span className='text-sm md:text-xl'>Code Here</span>
                     <FaGithub className='text-[1rem] md:text-[2rem]'/>
                 </button>
             </Link>
 
-            <Link className='text-4xl text-black' to={"https://yumking-frontend.vercel.app/"} target='_blank'>
+            <Link className='text-4xl text-black' to={"https://celeste-restaurant.vercel.app/"} target='_blank'>
                 <button className='flex items-center bg-[#028041] rounded-sm gap-2 p-1 text-[#faf8ff]'>
                     <span className='text-sm md:text-xl'>Live Preview</span>
                     <FaEye className='text-[1rem] md:text-[2rem]'/>
@@ -289,7 +289,9 @@ export default function Home({transform, success,  setSucces}) {
         </div>
     </div>
 
-    <img className='rounded-3xl' src="/project2.png" />
+    <img
+        loading='lazy'
+    className='rounded-3xl' src="/project1.webp" />
 
                     </div>
 
@@ -315,40 +317,45 @@ style={{transition: "translate 0.7s"}}>
     </div>
 </div>
 
-<img className='rounded-3xl' src="/project3.png" />
+<img 
+    loading='lazy'
+    className='rounded-3xl' src="/project3.webp" />
 
                     </div>
 
-                    <div onClick={(e) => {e.stopPropagation(); window.location.href='https://celeste-restaurant.vercel.app/'}} className="relative project overflow-hidden group">
+                    <div onClick={(e) => {e.stopPropagation(); window.location.href='https://yumking-frontend.vercel.app/'}} className="relative project overflow-hidden group">
 
-                        <div className='project-layer absolute w-full h-full bg-[#000]/60 gap-3 rounded-3xl flex flex-col items-center justify-center translate-y-[100%] group-hover:translate-y-[0%]' 
-                        style={{transition: "translate 0.7s"}}>
+<div className='project-layer absolute w-full h-full bg-[#000]/60 gap-3 rounded-3xl flex flex-col items-center justify-center translate-y-[100%] group-hover:translate-y-[0%]' 
+style={{transition: "translate 0.7s"}}>
 
-                            <div>
-                                <h3 className='text-[#faf8ff] w-[20rem] md:w-[30rem] text-center font-bold'>
-                                    A clean, responsive portfolio platform with dynamic sections and smooth animations.
-                                </h3>
-                            </div>
+    <div>
+        <h3 className='text-[#faf8ff] w-[20rem] md:w-[30rem] text-center font-bold'>
+            A fast and intuitive food delivery app with real-time reservation, smart filters and authentication.
+        </h3>
+    </div>
 
-                            <div className='flex items-center justify-center text-2xl gap-10'>
-                                <Link className='text-4xl text-black' to={"https://github.com/Robots-Pixels/Celeste-Restaurant"} target='_blank'>
-                                    <button className='flex items-center bg-[#028041] rounded-sm gap-2 p-1 text-[#faf8ff]'>
-                                        <span className='text-sm md:text-xl'>Code Here</span>
-                                        <FaGithub className='text-[1rem] md:text-[2rem]'/>
-                                    </button>
-                                </Link>
+    <div className='flex items-center justify-center text-2xl gap-10'>
+        <Link className='text-4xl text-black' to={"https://github.com/Robots-Pixels/yumking-fast-food-app"} target='_blank'>
+            <button className='flex items-center bg-[#028041] rounded-sm gap-2 p-1 text-[#faf8ff]'>
+                <span className='text-sm md:text-xl'>Code Here</span>
+                <FaGithub className='text-[1rem] md:text-[2rem]'/>
+            </button>
+        </Link>
 
-                                <Link className='text-4xl text-black' to={"https://celeste-restaurant.vercel.app/"} target='_blank'>
-                                    <button className='flex items-center bg-[#028041] rounded-sm gap-2 p-1 text-[#faf8ff]'>
-                                        <span className='text-sm md:text-xl'>Live Preview</span>
-                                        <FaEye className='text-[1rem] md:text-[2rem]'/>
-                                    </button>
-                                </Link>
+        <Link className='text-4xl text-black' to={"https://yumking-frontend.vercel.app/"} target='_blank'>
+            <button className='flex items-center bg-[#028041] rounded-sm gap-2 p-1 text-[#faf8ff]'>
+                <span className='text-sm md:text-xl'>Live Preview</span>
+                <FaEye className='text-[1rem] md:text-[2rem]'/>
+            </button>
+        </Link>
 
-                            </div>
-                        </div>
+    </div>
+</div>
 
-                        <img className='rounded-3xl' src="/project1.png" />
+<img 
+loading='lazy'
+className='rounded-3xl' 
+src="/project2.webp" />
 
                     </div>
 
