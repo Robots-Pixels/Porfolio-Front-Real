@@ -73,11 +73,11 @@ export default function Home({transform, success,  setSucces}) {
         }
     }, [success]);
 
-    const { ref: heroRef, inView: heroInView } = useInView({ triggerOnce: true, threshold: 0.2 });
-    const { ref: aboutRef, inView: aboutInView } = useInView({ triggerOnce: true, threshold: 0.2 });
-    const { ref: projectsRef, inView: projectsInView } = useInView({ triggerOnce: true, threshold: 0.2 });
-    const { ref: skillsRef, inView: skillsInView } = useInView({ triggerOnce: true, threshold: 0.2 });
-    const { ref: contactRef, inView: contactInView } = useInView({ triggerOnce: true, threshold: 0.2 });
+    const { ref: heroRef, inView: heroInView } = useInView({ triggerOnce: true, threshold: 0.1 });
+    const { ref: aboutRef, inView: aboutInView } = useInView({ triggerOnce: true, threshold: 0.1 });
+    const { ref: projectsRef, inView: projectsInView } = useInView({ triggerOnce: true, threshold: 0.1 });
+    const { ref: skillsRef, inView: skillsInView } = useInView({ triggerOnce: true, threshold: 0.1 });
+    const { ref: contactRef, inView: contactInView } = useInView({ triggerOnce: true, threshold: 0.1 });
     
   return (
     <div className={`relative bg-[#faf8ff] w-full`}
@@ -87,7 +87,7 @@ export default function Home({transform, success,  setSucces}) {
         ref={heroRef}
         initial={{ opacity: 0, y: 20 }}
         animate={heroInView ? { opacity: 1, y: 0 } : {}}
-        transition={{ duration: 1.5, ease: "easeOut" }}
+        transition={{ duration: 1, ease: "easeOut" }}
         id='hero'
         className='max-w-3xl md:max-w-6xl mx-auto px-6 md:px-8 sm:pb-20'>
 
@@ -360,7 +360,6 @@ src="/project2.webp" />
                     </div>
 
                 </div>
-
             </div>
         </motion.section>
 
