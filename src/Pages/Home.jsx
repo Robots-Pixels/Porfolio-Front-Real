@@ -57,7 +57,7 @@ export default function Home({transform, success,  setSucces}) {
 
         setTimeout(() => {
             navigate("/");
-        }, 2000);
+        }, 3000);
     }
 
     useEffect(() => {
@@ -69,7 +69,7 @@ export default function Home({transform, success,  setSucces}) {
             })
             setTimeout(()=> {
                 setSucces(false);
-            }, 2000)
+            }, 3000)
         }
     }, [success]);
 
@@ -80,6 +80,7 @@ export default function Home({transform, success,  setSucces}) {
     const { ref: contactRef, inView: contactInView } = useInView({ triggerOnce: true, threshold: 0.1 });
     
   return (
+
     <div className={`relative bg-[#faf8ff] w-full`}
     style={{transition: "all 0.5s ease", transform: `translateY(${transform}rem)`}}>
 
